@@ -33,12 +33,15 @@ Simulated and mixed spectra RMSEs are compared, as well as unmixed and mixed spe
 ### R^2 and Spectral Angle Mapper (SAM) 
 R^2 and Spectral Angle Mapper (SAM) are employed for unmixing model robustness (R2_SAM_analysis.ipynb). 
 There are two methods for R^2 calculations: 
+
 R^2 = 1 − (∑(a − b)^2) / (∑(b − a)^2)
+
 which treats the unmixed spectrum (a) as a prediction and the reference endmember (b) as the "truth". This technique is sensitive to absolute scaling, therefore differences in absolute reflectance can cause poor R^2 values. 
 
 and 
 
 b ≈ β0 + β1 * a
+
 which computes R^2 as a linear regression of b on a, and and ignores absolute reflectance (magnitude) differences. This technique may therefore overestimate fit quality, and even when the R^2 value is high, the unmixing model can still remove important spectral features present in the original mixed spectrum. 
 
 ## PCA and LDA
