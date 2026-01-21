@@ -7,13 +7,16 @@ The preprocessing script (field_spectra_processing.ipynb) can be adjusted depend
 
 ## Spectral Unmixing
 Unmixing protocol adapted from Ochoa et al. 2025 https://github.com/emit-sds/SpectralUnmixing.jl
-  endmembers == soil at nadir; vegetation at leaf level (taken with SVC RT Sphere)
-  mixed == nadir SVC indoor canopy level with 14 degree FOV over 350-2500nm wavelength range
+  endmembers = soil at nadir; vegetation at leaf level (taken with SVC RT Sphere)
+  
+  mixed = nadir SVC indoor canopy level with 14 degree FOV over 350-2500nm wavelength range
 
 There are two unmixing scripts, one using all the endmember data and all mixed spectra (unmixed_leaf_spectra.ipynb), and another using only plots 1108, 1310 and 1405 (unmixed_leaf_spectra_limited.ipynb) which includes only plots where we have both nadir and leaf level measurements. 
 
 ### Unmix spectra formula: 
+
 Leaf Fraction (per wavelength) = mixed - (soil fraction * soil endmember)
+
 Unmixed leaf spectra (per wavelength) = leaf fraction / (1 - soil fraction)
 
 therefore: 
